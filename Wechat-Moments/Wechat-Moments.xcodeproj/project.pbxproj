@@ -76,6 +76,10 @@
 		D6BF1F742047CE1D0095A540 /* Wechat-Moments */ = {
 			isa = PBXGroup;
 			children = (
+				D6BF1F8E2047D2B30095A540 /* Addressbook */,
+				D6BF1F8F2047D2B30095A540 /* Discover */,
+				D6BF1F972047D2B30095A540 /* Mine */,
+				D6BF1F982047D2B30095A540 /* WeChat */,
 				D6BF1F752047CE1D0095A540 /* AppDelegate.h */,
 				D6BF1F762047CE1D0095A540 /* AppDelegate.m */,
 				D6BF1F782047CE1D0095A540 /* ViewController.h */,
@@ -88,6 +92,90 @@
 				D6BF1F7E2047CE1E0095A540 /* Wechat_Moments.xcdatamodeld */,
 			);
 			path = "Wechat-Moments";
+			sourceTree = "<group>";
+		};
+		D6BF1F8E2047D2B30095A540 /* Addressbook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Addressbook;
+			sourceTree = "<group>";
+		};
+		D6BF1F8F2047D2B30095A540 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				D6BF1F902047D2B30095A540 /* Model */,
+				D6BF1F912047D2B30095A540 /* View */,
+				D6BF1F922047D2B30095A540 /* ViewController */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		D6BF1F902047D2B30095A540 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6BF1F912047D2B30095A540 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6BF1F922047D2B30095A540 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D6BF1F932047D2B30095A540 /*  Moments */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D6BF1F932047D2B30095A540 /*  Moments */ = {
+			isa = PBXGroup;
+			children = (
+				D6BF1F942047D2B30095A540 /* Model */,
+				D6BF1F952047D2B30095A540 /* View */,
+				D6BF1F962047D2B30095A540 /* ViewController */,
+			);
+			path = " Moments";
+			sourceTree = "<group>";
+		};
+		D6BF1F942047D2B30095A540 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6BF1F952047D2B30095A540 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6BF1F962047D2B30095A540 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D6BF1F972047D2B30095A540 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		D6BF1F982047D2B30095A540 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeChat;
 			sourceTree = "<group>";
 		};
 		E8AF22716E8CF22E3162FCD9 /* Frameworks */ = {
