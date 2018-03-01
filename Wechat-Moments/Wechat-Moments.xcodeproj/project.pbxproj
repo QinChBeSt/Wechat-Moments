@@ -32,6 +32,7 @@
 		D6BF1F842047CE1E0095A540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6BF1F862047CE1E0095A540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6BF1F872047CE1E0095A540 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6BF1F992047D3540095A540 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 				D6BF1F862047CE1E0095A540 /* Info.plist */,
 				D6BF1F872047CE1E0095A540 /* main.m */,
 				D6BF1F7E2047CE1E0095A540 /* Wechat_Moments.xcdatamodeld */,
+				D6BF1F992047D3540095A540 /* PrefixHeader.pch */,
 			);
 			path = "Wechat-Moments";
 			sourceTree = "<group>";
@@ -450,6 +452,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Wechat-Moments/PrefixHeader.pch";
 				INFOPLIST_FILE = "Wechat-Moments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments";
@@ -464,6 +468,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Wechat-Moments/PrefixHeader.pch";
 				INFOPLIST_FILE = "Wechat-Moments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments";
