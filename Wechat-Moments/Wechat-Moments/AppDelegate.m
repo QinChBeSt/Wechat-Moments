@@ -7,7 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+//VC
+#import "WeChatViewController.h"
+#import "AddressbookViewController.h"
+#import "DiscoverViewController.h"
+#import "MineViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,50 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //1.创建Window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+
+    //a.初始化一个tabBar控制器
+    UITabBarController *tabbar=[[UITabBarController alloc]init];
+    
+    //设置控制器为Window的根控制器
+    self.window.rootViewController=tabbar;
+    //设置tabBar颜色
+   tabbar.tabBar.tintColor = [UIColor colorWithRed:24/255.0 green:164/255.0 blue:13/255.0 alpha:1];
+    
+    WeChatViewController *weChatVC = [[WeChatViewController alloc]init];
+    weChatVC.title = @"微信";
+    weChatVC.tabBarItem.title=@"微信";
+    weChatVC.tabBarItem.image=[UIImage imageNamed:@"discover"];
+    weChatVC.tabBarItem.selectedImage = [UIImage imageNamed:@"discoverSelect"];
+    UINavigationController * weChatNavi = [[UINavigationController alloc]initWithRootViewController:weChatVC];
+    [tabbar addChildViewController:weChatNavi];
+    
+    AddressbookViewController *addressbookVC = [[AddressbookViewController alloc]init];
+    addressbookVC.title = @"通讯录";
+    addressbookVC.tabBarItem.title=@"通讯录";
+    addressbookVC.tabBarItem.image=[UIImage imageNamed:@"addressbook"];
+    addressbookVC.tabBarItem.selectedImage = [UIImage imageNamed:@"addressbookSelect"];
+    UINavigationController * addressNavi = [[UINavigationController alloc]initWithRootViewController:addressbookVC];
+    [tabbar addChildViewController:addressNavi];
+    
+    DiscoverViewController *discoverVC = [[DiscoverViewController alloc]init];
+    discoverVC.title = @"发现";
+    discoverVC.tabBarItem.title=@"发现";
+    discoverVC.tabBarItem.image=[UIImage imageNamed:@"discover"];
+    discoverVC.tabBarItem.selectedImage = [UIImage imageNamed:@"discoverSelect"];
+    UINavigationController * discoverNavi = [[UINavigationController alloc]initWithRootViewController:discoverVC];
+    [tabbar addChildViewController:discoverNavi];
+    
+    MineViewController *mineVC = [[MineViewController alloc]init];
+    mineVC.title = @"我的";
+    mineVC.tabBarItem.title=@"我的";
+    mineVC.tabBarItem.image=[UIImage imageNamed:@"mine"];
+    mineVC.tabBarItem.selectedImage = [UIImage imageNamed:@"mineS"];
+    UINavigationController * mineNavi = [[UINavigationController alloc]initWithRootViewController:mineVC];
+    [tabbar addChildViewController:mineNavi];
     return YES;
 }
 
