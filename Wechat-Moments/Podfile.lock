@@ -14,13 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - SDAutoLayout (2.2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Masonry
+  - SDAutoLayout
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
 
-PODFILE CHECKSUM: 1870d7627b509ad3338a760f86698ca6ee874966
+PODFILE CHECKSUM: fad6c0c9a68297da870883ca8208e536e6f2169c
 
 COCOAPODS: 1.3.1

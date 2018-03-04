@@ -106,6 +106,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MomentViewController *momentVC = [[MomentViewController alloc]init];
+    self.navigationController.navigationBarHidden = YES;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self.navigationController pushViewController:momentVC animated:YES];
     
 }
