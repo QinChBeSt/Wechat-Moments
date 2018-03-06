@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		292C1AE611854AE71155538F /* libPods-Wechat-Moments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB2A3D0D70E5F83BFFC6C6 /* libPods-Wechat-Moments.a */; };
+		D60BBA1B204ED6FB008A9354 /* MomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BBA1A204ED6FB008A9354 /* MomentModel.m */; };
 		D629EA8F2048E4E900FB4AB9 /* MomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D629EA8E2048E4E900FB4AB9 /* MomentViewController.m */; };
+		D64C9540204D831F004A809B /* QCNetworkTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C953F204D831F004A809B /* QCNetworkTask.m */; };
+		D64C9543204E32F4004A809B /* CellForMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C9542204E32F4004A809B /* CellForMoment.m */; };
 		D6BF1F772047CE1D0095A540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF1F762047CE1D0095A540 /* AppDelegate.m */; };
 		D6BF1F7D2047CE1E0095A540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BF1F7B2047CE1E0095A540 /* Main.storyboard */; };
 		D6BF1F802047CE1E0095A540 /* Wechat_Moments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6BF1F7E2047CE1E0095A540 /* Wechat_Moments.xcdatamodeld */; };
@@ -25,8 +28,14 @@
 		0BB94CE471A056300880BAF7 /* Pods-Wechat-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wechat-Moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wechat-Moments/Pods-Wechat-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		CB8A6E02B8369CDEB2C7F646 /* Pods-Wechat-Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wechat-Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wechat-Moments/Pods-Wechat-Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		D4FB2A3D0D70E5F83BFFC6C6 /* libPods-Wechat-Moments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wechat-Moments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60BBA19204ED6FB008A9354 /* MomentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomentModel.h; sourceTree = "<group>"; };
+		D60BBA1A204ED6FB008A9354 /* MomentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomentModel.m; sourceTree = "<group>"; };
 		D629EA8D2048E4E900FB4AB9 /* MomentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomentViewController.h; sourceTree = "<group>"; };
 		D629EA8E2048E4E900FB4AB9 /* MomentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomentViewController.m; sourceTree = "<group>"; };
+		D64C953E204D831F004A809B /* QCNetworkTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCNetworkTask.h; sourceTree = "<group>"; };
+		D64C953F204D831F004A809B /* QCNetworkTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCNetworkTask.m; sourceTree = "<group>"; };
+		D64C9541204E32F4004A809B /* CellForMoment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellForMoment.h; sourceTree = "<group>"; };
+		D64C9542204E32F4004A809B /* CellForMoment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellForMoment.m; sourceTree = "<group>"; };
 		D6BF1F722047CE1D0095A540 /* Wechat-Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wechat-Moments.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BF1F752047CE1D0095A540 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6BF1F762047CE1D0095A540 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +77,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D64C953D204D82FC004A809B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D64C953E204D831F004A809B /* QCNetworkTask.h */,
+				D64C953F204D831F004A809B /* QCNetworkTask.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		D6BF1F692047CE1D0095A540 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,7 @@
 		D6BF1F742047CE1D0095A540 /* Wechat-Moments */ = {
 			isa = PBXGroup;
 			children = (
+				D64C953D204D82FC004A809B /* Other */,
 				D6BF1F8E2047D2B30095A540 /* Addressbook */,
 				D6BF1F8F2047D2B30095A540 /* Discover */,
 				D6BF1F972047D2B30095A540 /* Mine */,
@@ -161,6 +180,8 @@
 		D6BF1F942047D2B30095A540 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D60BBA19204ED6FB008A9354 /* MomentModel.h */,
+				D60BBA1A204ED6FB008A9354 /* MomentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +189,8 @@
 		D6BF1F952047D2B30095A540 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D64C9541204E32F4004A809B /* CellForMoment.h */,
+				D64C9542204E32F4004A809B /* CellForMoment.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,9 +383,12 @@
 				D629EA8F2048E4E900FB4AB9 /* MomentViewController.m in Sources */,
 				D6BF1FA82047D8D10095A540 /* DiscoverViewController.m in Sources */,
 				D6BF1F802047CE1E0095A540 /* Wechat_Moments.xcdatamodeld in Sources */,
+				D60BBA1B204ED6FB008A9354 /* MomentModel.m in Sources */,
 				D6BF1F882047CE1E0095A540 /* main.m in Sources */,
 				D6BF1FA52047D8760095A540 /* AddressbookViewController.m in Sources */,
+				D64C9543204E32F4004A809B /* CellForMoment.m in Sources */,
 				D6BF1FA22047D85F0095A540 /* MineViewController.m in Sources */,
+				D64C9540204D831F004A809B /* QCNetworkTask.m in Sources */,
 				D6BF1F9F2047D8530095A540 /* WeChatViewController.m in Sources */,
 				D6BF1F772047CE1D0095A540 /* AppDelegate.m in Sources */,
 			);

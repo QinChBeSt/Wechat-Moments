@@ -3,4 +3,5 @@ target 'Wechat-Moments' do
 pod 'AFNetworking'
 pod 'Masonry'
 pod 'SDAutoLayout'
+pod 'SDWebImage'
 end
