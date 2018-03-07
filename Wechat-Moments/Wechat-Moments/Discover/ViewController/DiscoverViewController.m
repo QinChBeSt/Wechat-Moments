@@ -10,6 +10,7 @@
 #import "MomentViewController.h"
 @interface DiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *discoverTableview;
+
 @end
 
 @implementation DiscoverViewController

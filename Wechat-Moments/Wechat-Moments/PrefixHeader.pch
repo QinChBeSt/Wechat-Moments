@@ -20,5 +20,8 @@
 #endif /* PrefixHeader_pch */
 #ifdef __OBJC__
 #import <Masonry.h>
+#import "UIView+SDAutoLayout.h"
+#import "UITableView+SDAutoTableViewCellHeight.h"
+#import "UIImageView+WebCache.h"
 
 #endif

@@ -7,8 +7,55 @@
 //
 
 #import "CellForMoment.h"
+@implementation CellForMoment{
+    UIImageView *userIcon;
+    UILabel *userName;
+    
+}
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
+    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        [self setupUI];
+    }
+    
+    
+    return self;
+    
+    
+}
+-(void)setupUI{
+    userIcon = [[UIImageView alloc]init];
+    [self.contentView addSubview:userIcon];
+    userIcon.sd_layout
+    .leftSpaceToView(self.contentView, 20)
+    .widthIs(50)
+    .heightIs(50)
+    .topSpaceToView(self.contentView, 20);
+    
+    
+    userName = [[UILabel alloc]init];
+    userName.textColor = [UIColor blueColor];
+    [self.contentView addSubview:userName];
+    userName.sd_layout
+    .topSpaceToView(self.contentView,20)
+    .leftSpaceToView(userIcon, 10);
+   
+    [self setupAutoHeightWithBottomView:userIcon bottomMargin:10];
 
-@implementation CellForMoment
+}
+-(void)setModel:(MomentModel *)model{
+    NSLog(@"%@",model.sender[@"avatar"]);
+    userName.text = model.sender[@"nick"];
+    [userIcon sd_setImageWithURL:[NSURL URLWithString:model.sender[@"avatar"]] placeholderImage:[UIImage imageNamed:@"头像"]];
+}
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -18,26 +65,6 @@
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
-}
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    
-    
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-    if (self) {
-        
-    }
-    
-    
-    return self;
-    
-    
-}
-
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    
 }
 
 

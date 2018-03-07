@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MomentModel.h"
 @interface CellForMoment : UITableViewCell
-
+@property (nonatomic , strong) MomentModel *model;
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		292C1AE611854AE71155538F /* libPods-Wechat-Moments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB2A3D0D70E5F83BFFC6C6 /* libPods-Wechat-Moments.a */; };
 		D60BBA1B204ED6FB008A9354 /* MomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BBA1A204ED6FB008A9354 /* MomentModel.m */; };
+		D60BBA1E204EE5D9008A9354 /* SenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BBA1D204EE5D9008A9354 /* SenderModel.m */; };
+		D60BBA21204EE6AC008A9354 /* commentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BBA20204EE6AC008A9354 /* commentModel.m */; };
 		D629EA8F2048E4E900FB4AB9 /* MomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D629EA8E2048E4E900FB4AB9 /* MomentViewController.m */; };
 		D64C9540204D831F004A809B /* QCNetworkTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C953F204D831F004A809B /* QCNetworkTask.m */; };
 		D64C9543204E32F4004A809B /* CellForMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C9542204E32F4004A809B /* CellForMoment.m */; };
@@ -30,6 +32,10 @@
 		D4FB2A3D0D70E5F83BFFC6C6 /* libPods-Wechat-Moments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wechat-Moments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60BBA19204ED6FB008A9354 /* MomentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomentModel.h; sourceTree = "<group>"; };
 		D60BBA1A204ED6FB008A9354 /* MomentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomentModel.m; sourceTree = "<group>"; };
+		D60BBA1C204EE5D9008A9354 /* SenderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenderModel.h; sourceTree = "<group>"; };
+		D60BBA1D204EE5D9008A9354 /* SenderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenderModel.m; sourceTree = "<group>"; };
+		D60BBA1F204EE6AC008A9354 /* commentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commentModel.h; sourceTree = "<group>"; };
+		D60BBA20204EE6AC008A9354 /* commentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commentModel.m; sourceTree = "<group>"; };
 		D629EA8D2048E4E900FB4AB9 /* MomentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomentViewController.h; sourceTree = "<group>"; };
 		D629EA8E2048E4E900FB4AB9 /* MomentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomentViewController.m; sourceTree = "<group>"; };
 		D64C953E204D831F004A809B /* QCNetworkTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCNetworkTask.h; sourceTree = "<group>"; };
@@ -182,6 +188,10 @@
 			children = (
 				D60BBA19204ED6FB008A9354 /* MomentModel.h */,
 				D60BBA1A204ED6FB008A9354 /* MomentModel.m */,
+				D60BBA1C204EE5D9008A9354 /* SenderModel.h */,
+				D60BBA1D204EE5D9008A9354 /* SenderModel.m */,
+				D60BBA1F204EE6AC008A9354 /* commentModel.h */,
+				D60BBA20204EE6AC008A9354 /* commentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,8 +398,10 @@
 				D6BF1FA52047D8760095A540 /* AddressbookViewController.m in Sources */,
 				D64C9543204E32F4004A809B /* CellForMoment.m in Sources */,
 				D6BF1FA22047D85F0095A540 /* MineViewController.m in Sources */,
+				D60BBA21204EE6AC008A9354 /* commentModel.m in Sources */,
 				D64C9540204D831F004A809B /* QCNetworkTask.m in Sources */,
 				D6BF1F9F2047D8530095A540 /* WeChatViewController.m in Sources */,
+				D60BBA1E204EE5D9008A9354 /* SenderModel.m in Sources */,
 				D6BF1F772047CE1D0095A540 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,8 @@
 #import "MomentViewController.h"
 #import "QCNetworkTask.h"
 #import "UIImageView+WebCache.h"
-
+#import "CellForMoment.h"
+#import "MomentModel.h"
 
 @interface MomentViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (nonatomic , strong) UIView *naviView;
@@ -18,6 +19,10 @@
 @property (nonatomic , strong) UIImageView *haedviewBackImg;
 @property (nonatomic , strong) UILabel *haedviewNickname;
 @property (nonatomic , strong) UIImageView *headviewIcon;
+
+@property (nonatomic , strong) NSMutableArray *MomentListArr;
+@property (nonatomic , strong) MomentModel *models;
+
 @end
 
 @implementation MomentViewController
@@ -33,6 +38,14 @@
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = NO;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+}
+- (NSMutableArray *)MomentListArr
+{
+    if (!_MomentListArr)
+    {
+        _MomentListArr = [NSMutableArray array];
+    }
+    return _MomentListArr;
 }
 
 - (void)viewDidLoad {
@@ -130,7 +143,7 @@
     }];
     
     /** 注册cell. */
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"pool1"];
+    [self.tableView registerClass:[CellForMoment class] forCellReuseIdentifier:@"pool1"];
     
     [self.view addSubview:self.tableView];
     
@@ -151,8 +164,15 @@
     } withFail:nil];
     
     [QCNetworkTask getWithURL:@"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets" withParameter:nil withHttpHeader:nil withResponseType:ResponseTypeJSON withSuccess:^(id result) {
-        NSLog(@"%@",result);
         
+        NSMutableArray *arr = result;
+        for (NSMutableDictionary *dic in arr) {
+            MomentModel *model = [[MomentModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.MomentListArr addObject:model];
+        }
+        NSLog(@"%@",self.MomentListArr);
+        [self.tableView reloadData];
     } withFail:nil];
 }
 
@@ -160,20 +180,28 @@
 /**** 行数 ****/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.MomentListArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pool1"];
+    CellForMoment *cell = [tableView dequeueReusableCellWithIdentifier:@"pool1"];
+    MomentModel *mod = [self.MomentListArr objectAtIndex:indexPath.row];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.model = mod;
     
     return cell;
 }
 /* 行高 **/
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Class currentClass = [CellForMoment class];
     
-    return 100;
-}
+    MomentModel *model = self.MomentListArr[indexPath.row];
+    
+    return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:currentClass contentViewWidth:kScreenWidth];
+   }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
