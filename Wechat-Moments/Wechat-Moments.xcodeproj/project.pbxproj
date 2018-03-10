@@ -543,7 +543,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Wechat-Moments/PrefixHeader.pch";
 				INFOPLIST_FILE = "Wechat-Moments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -560,7 +560,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Wechat-Moments/PrefixHeader.pch";
 				INFOPLIST_FILE = "Wechat-Moments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QC.Wechat-Moments11";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -12,7 +12,7 @@
 //内容
 @property (nonatomic , strong) NSString * content;
 //图
-@property (nonatomic , strong) NSMutableArray *images;
+@property (nonatomic , strong) NSArray *images;
 //用户
 @property (nonatomic , strong) NSMutableDictionary *sender;
 //留言

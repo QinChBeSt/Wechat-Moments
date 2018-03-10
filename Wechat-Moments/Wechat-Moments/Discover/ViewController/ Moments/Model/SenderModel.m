@@ -9,5 +9,5 @@
 #import "SenderModel.h"
 
 @implementation SenderModel
-
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{}
 @end

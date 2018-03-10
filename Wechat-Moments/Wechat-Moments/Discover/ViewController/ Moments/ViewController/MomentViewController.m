@@ -169,7 +169,9 @@
         for (NSMutableDictionary *dic in arr) {
             MomentModel *model = [[MomentModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
-            [self.MomentListArr addObject:model];
+            if (model.images != NULL && model.content!= NULL) {
+               [self.MomentListArr addObject:model];
+            }
         }
         NSLog(@"%@",self.MomentListArr);
         [self.tableView reloadData];
