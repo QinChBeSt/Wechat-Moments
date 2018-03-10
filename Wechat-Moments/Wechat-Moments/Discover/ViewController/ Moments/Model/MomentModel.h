@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SenderModel.h"
+#import "commentModel.h"
 @interface MomentModel : NSObject
 //内容
 @property (nonatomic , strong) NSString * content;

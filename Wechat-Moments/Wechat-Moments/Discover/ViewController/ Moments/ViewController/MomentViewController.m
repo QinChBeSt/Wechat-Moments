@@ -188,6 +188,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CellForMoment *cell = [tableView dequeueReusableCellWithIdentifier:@"pool1"];
+    
     MomentModel *mod = [self.MomentListArr objectAtIndex:indexPath.row];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

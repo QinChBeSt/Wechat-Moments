@@ -11,6 +11,7 @@
 @interface CellForMoment ()
 @property (nonatomic , strong) UIView *pictureView;
 @property (nonatomic , strong) NSLayoutConstraint *bigPictureViewHeight;
+@property (nonatomic , copy) NSMutableArray *contentArray;
 @end
 
 @implementation CellForMoment{
@@ -23,6 +24,14 @@
     UILabel *commentText;
     
     
+}
+- (NSMutableArray *)contentArray
+{
+    if (!_contentArray)
+    {
+        _contentArray = [NSMutableArray array];
+    }
+    return _contentArray;
 }
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     
@@ -84,14 +93,31 @@
    
     if (model.comments != NULL) {
         if (model.images.count <= 3) {
-            for (commentModel *commentMode in model.comments ) {
-                
+            for (NSMutableDictionary *dic in model.comments) {
+               
+                commentModel *commentmodel = [[commentModel alloc ]init];
+                [commentmodel setValuesForKeysWithDictionary:dic];
+                [self.contentArray addObject:commentmodel];
             }
+            NSInteger count = self.contentArray.count;
             commentView.sd_layout
             .leftEqualToView(contentLabel)
             .rightSpaceToView(self.contentView, 10)
-            .heightIs(30)
+            .heightIs( 30 * count)
             .topSpaceToView(contentLabel,(kScreenWidth - 80 -20) / 3 + 10 + 10);
+            for (int i  = 0; i < self.contentArray.count; i++) {
+                UILabel *content = [[UILabel alloc]init];
+                commentModel *commentmodel = [[commentModel alloc ]init];
+                commentmodel = self.contentArray[i];
+                content.text = commentmodel.content;
+                content.textColor = [UIColor blackColor];
+                [commentView addSubview:content];
+                [content mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.equalTo(commentView.mas_top).offset(3+30*i);
+                    make.left.equalTo(commentView.mas_left).offset(10);
+                }];
+               
+            }
         }
         else if (model.images.count <= 6){
             
@@ -203,7 +229,7 @@
             x = picAddWIDTH * 2;
             y = picAddWIDTH * 2;
         }
-        NSLog(@"---------i = %d x=%f y=%f,",i,x,y);
+        
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, y , picWidth,picWidth)];
         imageView.backgroundColor = [UIColor whiteColor];
         imageView.clipsToBounds = YES;
