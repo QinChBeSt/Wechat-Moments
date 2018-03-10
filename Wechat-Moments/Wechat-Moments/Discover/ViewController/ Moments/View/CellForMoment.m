@@ -72,9 +72,7 @@
     .rightSpaceToView(self.contentView, 10)
     .autoHeightRatio(0);
    
-    commentView = [[UIView alloc]init];
-    commentView.backgroundColor = [UIColor grayColor];
-    [self.contentView addSubview:commentView];
+    
 }
 -(void)setModel:(MomentModel *)model{
    
@@ -88,56 +86,78 @@
         NSString *url = dicUrl[@"url"];
         [arrUrl addObject:url];
     }
-
-    [self createPicTureView:arrUrl];
-   
-    if (model.comments != NULL) {
-        if (model.images.count <= 3) {
-            for (NSMutableDictionary *dic in model.comments) {
-               
-                commentModel *commentmodel = [[commentModel alloc ]init];
-                [commentmodel setValuesForKeysWithDictionary:dic];
-                [self.contentArray addObject:commentmodel];
-            }
-            NSInteger count = self.contentArray.count;
-            commentView.sd_layout
-            .leftEqualToView(contentLabel)
-            .rightSpaceToView(self.contentView, 10)
-            .heightIs( 30 * count)
-            .topSpaceToView(contentLabel,(kScreenWidth - 80 -20) / 3 + 10 + 10);
-            for (int i  = 0; i < self.contentArray.count; i++) {
-                UILabel *content = [[UILabel alloc]init];
-                commentModel *commentmodel = [[commentModel alloc ]init];
-                commentmodel = self.contentArray[i];
-                content.text = commentmodel.content;
-                content.textColor = [UIColor blackColor];
-                [commentView addSubview:content];
-                [content mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(commentView.mas_top).offset(3+30*i);
-                    make.left.equalTo(commentView.mas_left).offset(10);
-                }];
-               
-            }
-        }
-        else if (model.images.count <= 6){
-            
-            commentView.sd_layout
-            .leftEqualToView(contentLabel)
-            .rightSpaceToView(self.contentView, 10)
-            .heightIs(30)
-            .topSpaceToView(contentLabel,(kScreenWidth - 80 -20) / 3 * 2+ 20 + 10);
-        }
-        
-        [self setupAutoHeightWithBottomView:commentView bottomMargin:10];
-    }else{
-       [self setupAutoHeightWithBottomView:self.pictureView bottomMargin:10];
-    }
     
+    [self createPicTureView:arrUrl];
+    [self commentview:model.comments];
+
 }
 
 
     
-   
+- (void)commentview:(NSArray *)commentArr{
+    [_contentArray removeAllObjects];
+    commentView = [[UIView alloc]init];
+    [self.contentView addSubview:commentView];
+    if ([commentArr count] == 0) {
+        [self setupAutoHeightWithBottomView:_pictureView bottomMargin:10];
+        return;
+    }
+    else if ([commentArr count] == 1) {
+        commentView.sd_layout
+        .leftEqualToView(contentLabel)
+        .topSpaceToView(_pictureView, 10)
+        .rightSpaceToView(self.contentView, 10)
+        .heightIs(30);
+        
+        [self setupAutoHeightWithBottomView:commentView bottomMargin:10];
+    }
+    else if ([commentArr count] == 2) {
+        commentView.sd_layout
+        .leftEqualToView(contentLabel)
+        .topSpaceToView(_pictureView, 10)
+        .rightSpaceToView(self.contentView, 10)
+        .heightIs(60);
+        [self setupAutoHeightWithBottomView:commentView bottomMargin:10];
+    }
+    else if ([commentArr count] == 3) {
+        commentView.sd_layout
+        .leftEqualToView(contentLabel)
+        .topSpaceToView(_pictureView, 10)
+        .rightSpaceToView(self.contentView, 10)
+        .heightIs(90);
+        [self setupAutoHeightWithBottomView:commentView bottomMargin:10];
+    }
+    float x = 0;
+    for (int i = 0; i < commentArr.count; i++) {
+        x = i;
+        UILabel *commentusername = [[UILabel alloc]init];
+        NSMutableDictionary *dic = commentArr[i];
+        NSMutableDictionary *namedic = dic[@"sender"];
+        commentusername.textColor =[UIColor blueColor];
+        commentusername.text = namedic[@"username"];
+        NSLog(@"========%@",dic[@"content"]);
+        [commentView addSubview:commentusername];
+        [commentusername mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_pictureView.mas_bottom).offset(30 * x);
+            make.left.equalTo(_pictureView);
+            make.height.equalTo(@(30));
+        }];
+        
+        UILabel *commentLabel = [[UILabel alloc]init];
+        
+        commentLabel.text = [NSString stringWithFormat:@":%@",dic[@"content"]];
+        NSLog(@"========%@",dic[@"content"]);
+        [commentView addSubview:commentLabel];
+        [commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_pictureView.mas_bottom).offset(30 * x);
+            make.left.equalTo(commentusername.mas_right).offset(5);
+            make.height.equalTo(@(30));
+        }];
+        
+      
+        
+    }
+}
 - (void)createPicTureView:(NSArray *)picArray{
    
     [pictureArray removeAllObjects];
@@ -239,6 +259,7 @@
         [pictureArray addObject:imageView];
  
     }
+    
 }
 
 
